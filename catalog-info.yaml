@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cp-demo-1778503916
+  description: AWS CodePipeline end-to-end demo: GHA→ECR→Pipeline→ArgoCD
+  annotations:
+    # GitHub Actions tab — workflow runs for this repo
+    github.com/project-slug: priyankaajbhagatt-collab/cp-demo-1778503916
+    backstage.io/techdocs-ref: dir:.
+    # ArgoCD tab — lists every app labeled service=<name> (one per market)
+    argocd/app-selector: service=cp-demo-1778503916
+    # Kubernetes tab — resources labeled app=<name> in any cluster
+    backstage.io/kubernetes-label-selector: app=cp-demo-1778503916
+    # AWS CodePipeline tab — pipelines tagged Service=<name> (Terraform module
+    # emits this tag; only meaningful when ciCdProvider==aws-codepipeline)
+    aws.amazon.com/aws-codepipeline-tags: Service=cp-demo-1778503916
+  tags:
+    - java
+    - spring-boot
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:guest
+  system: devex-scaffolder

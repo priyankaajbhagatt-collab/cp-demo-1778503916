@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cp-demo-1778503916
+  labels:
+    app: cp-demo-1778503916
+    market: usa
+    managed-by: backstage-scaffolder
+spec:
+  selector:
+    app: cp-demo-1778503916
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
